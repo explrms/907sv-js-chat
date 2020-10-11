@@ -10,7 +10,9 @@ const server = http.createServer(function(request, response) {
         console.log("POST");
         request.on("data", function(data) {
             console.log(data.toString());
-            messages.push(JSON.parse(data.toString()));
+            const newMessage = JSON.parse(data.toString());
+            newMessage.id = Math.random().toString(36).substring(2);
+            messages.push(newMessage);
         });
         request.on("end", function() {
             response.writeHead(200, defaultHeaders);
@@ -18,13 +20,12 @@ const server = http.createServer(function(request, response) {
         })
     } else {
         console.log("GET");
-        console.log(request);
         response.writeHead(200, defaultHeaders);
         response.end(JSON.stringify(messages))
     }
 })
 
 const port = 3001;
-const host = "0.0.0.0";
+const host = "141.8.192.31";
 server.listen(port, host);
 console.log(`Listening at http://${host}:${port}`);

@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Чат</title>
-  <link rel="stylesheet" type="text/css" href="main.css"/>
-  <script type="text/javascript" src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel" src="main.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
-<body>
-<h1>Чат</h1>
-<form>
-  <input type="text" id="nick"/>
-  <br/>
-  <textarea id="message"></textarea>
-  <br/>
-  <input type="button" id="button" value="отправить"/>
-</form>
-<div id="messages"></div>
+<body background="assets/images/background.gif" style="background-attachment: fixed">
+<div id="root"></div>
 </body>
 </html>
+
+<!--<h1 class="header1" style="text-align: center; color: #747474; margin-top: 40px;">Чат</h1>
+    <form style="text-align: center">
+        <input class ="s-input" id="nick" style="width: 30%; height: 20px;" placeholder="Ваш никнейм"><br>
+        <textarea class="s-input" id="message" style="width: 30%; height: 60px;" placeholder="Ваше сообщение"></textarea>
+        <br>
+        <button class="mail-btn" type="button" id="button" style="margin-top: 30px;">Отправить</button>
+    </form>
+<div id="results" style="margin: 0 auto; background-color: #DADADA; height: 50%; width: 60%; margin-top: 40px;"></div>-->
