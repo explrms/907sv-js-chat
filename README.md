@@ -3,7 +3,7 @@ Attempt to write a more or less adequate chat on React JS
 
 #upd 11.10.2020
 
-Actually, it was written a long time ago.
-But Git has only just appeared, so I will have to fill in 3 versions written at different times to create simulated commits.
-
-I hope they don't get expelled from Hogwarts for this.
+• Added message listening.
+• Changed the port for uploading to hosting.
+• Functions for sending and rendering messages are now available on NodeJS
+• Some design changes

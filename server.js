@@ -24,7 +24,7 @@ const server = http.createServer(function(request, response) {
     }
 })
 
-const port = 3000;
+const port = 3001;
 const host = "0.0.0.0";
 server.listen(port, host);
 console.log(`Listening at http://${host}:${port}`);

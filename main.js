@@ -1,32 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const element = document.getElementById('additionalInfo');
-    element.innerText = 'Нервирующая надпись номер 2';
-
+document.addEventListener('DOMContentLoaded', function () {
+    const URL = 'http://localhost:3001';
     const button = document.getElementById('button');
-    const nick = document.getElementById('nick');
-    const message = document.getElementByld('message');
-    const results = document.getElementById('results');
-    button.addEventListener('click', function() {
-        //const value = input.value;
+    const input = document.getElementById('input');
+    const messages = document.getElementById('messages');
+    button.addEventListener('click', function () {
         let xhr = new XMLHttpRequest();
+        xhr.open('POST', URL);
+        xhr.send(JSON.stringify({
+            nick: nick.value,
+            message: message.value
+        }));
 
-// 2. Настраиваем его: GET-запрос по URL
-// 3. Отсылаем запрос
-        xhr.open('POST', 'http://localhost:3000');
-// 4. Этот код сработает после того, как мы получим ответ сервера
-        xhr.onload = function() {
+        xhr.onload = function () {
             if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
-                results.innerText = `Ошибка ${xhr.status}: ${xhr.statusText}`; // Например, 404: Not Found
+                console.error('Ошибка!');
             } else { // если всё прошло гладко, выводим результат
-                results.innerText = `Готово, получили ${xhr.response.length} байт\n`; // response -- это ответ сервера
-                const serverResult = JSON.parse(xhr.response);
-                for (let result of serverResult.all) {
-                    results.innerText += `${result.text}\n`;
-                }
+                drawMessages(xhr.response);
             }
         };
 
-        xhr.onprogress = function(event) {
+
+        xhr.onprogress = function (event) {
             if (event.lengthComputable) {
                 console.log(`Получено ${event.loaded} из ${event.total} байт`);
             } else {
@@ -35,16 +29,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
         };
 
-        xhr.onerror = function() {
-            results.innerText = "Запрос не удался";
+        xhr.onerror = function () {
+            console.log('Запрос не удался');
         };
-        xhr.send(JSON.stringify(
-            {
-                nick: nick.value ,
-                message: message.value
-            }))
-    });
 
+    });
+    setInterval(function () {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', URL);
+        xhr.send();
+        xhr.onload = function () {
+            if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                console.error('Ошибка!');
+            } else { // если всё прошло гладко, выводим результат
+                drawMessages(xhr.response);
+            }
+        };
+
+    }, 1000)
 
 });
+
+function drawMessages(response) {
+    const messages = document.getElementById('messages');
+    const serverMessages = JSON.parse(response);
+    messages.innerHTML = "";
+    for (let serverMessage of serverMessages) {
+        messages.innerHTML += `<ul><b>${serverMessage.nick}|:</b>${serverMessage.message}</ul>`;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
