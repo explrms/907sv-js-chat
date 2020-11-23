@@ -1,0 +1,135 @@
+{
+  "name": "html-chat",
+  "version": "0.0.1",
+  "description": "Simple chat with react.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./configs/webpack.development.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./configs/webpack.production.js",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll",
+    "loki:test": "npm run build-storybook && npx loki test --reactUri file:./storybook-static",
+    "loki:update": "npm run build-storybook && npx loki update --reactUri file:./storybook-static",
+    "loki:approve": "npx loki approve",
+    "nightwatch": "nightwatch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitryweiner/html-chat.git"
+  },
+  "keywords": [
+    "chat",
+    "react.js"
+  ],
+  "author": "Dmitry Weiner",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dmitryweiner/html-chat/issues"
+  },
+  "homepage": "https://github.com/dmitryweiner/html-chat#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@blueprintjs/core": "^3.36.0",
+    "@material-ui/core": "^4.11.0",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-docs": "^6.1.2",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.0.28",
+    "axios": "^0.21.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.1",
+    "chromedriver": "^87.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "file-loader": "^6.2.0",
+    "formik": "^2.2.5",
+    "history": "^5.0.0",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^10.5.1",
+    "loki": "^0.25.1",
+    "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
+    "nightwatch": "^1.5.1",
+    "prettier": "^2.2.0",
+    "primeicons": "^4.1.0",
+    "primereact": "^5.0.1",
+    "react-admin": "^3.10.2",
+    "react-desktop": "^0.3.9",
+    "react-is": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-test-renderer": "^16.14.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^1.3.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.13.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "./setupTests.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "eslint --fix"
+    ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+}
