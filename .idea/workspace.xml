@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e78084b-cc09-4c4b-9e08-0e98de8b0a94" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/html-chat/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/public/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/public/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/src/views/LoginView.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/src/views/LoginView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/src/views/ProfileView.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/src/views/ProfileView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-chat/src/views/RegistrationView.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-chat/src/views/RegistrationView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mini-chat-server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/mini-chat-server/models/user.js" afterDir="false" />
-    </list>
+    <list default="true" id="84f28bde-6da9-43f1-92f7-e48dfe7d6b33" name="Default Changelist" comment="Версия 2.1&#10;• Сервер теперь находится в github.com/explrms/907sv-js-chat-server&#10;• Добавлен MaterialUI&#10;• Переведены некоторые сообщения об ошибках и не только." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +29,13 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1kgOniphxewTaDeCq3VwOGZa09y" />
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="6f85e50b-0d6e-4438-b3c1-4182686a7f84" />
+  </component>
+  <component name="ProjectId" id="1kfhYBqRmwxIwc6n591o4mufm1h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,15 +43,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/html-chat" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../907sv-js-chat-server" />
+    <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-win-x64/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\ytdan\PhpstormProjects\html-chat\html-chat\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ytdan\Desktop\ \Git\907sv-js-chat\html-chat\src" />
+      <recent name="C:\Users\ytdan\PhpstormProjects\html-chat" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,21 +64,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e78084b-cc09-4c4b-9e08-0e98de8b0a94" name="Default Changelist" comment="" />
-      <created>1606118937205</created>
+      <changelist id="84f28bde-6da9-43f1-92f7-e48dfe7d6b33" name="Default Changelist" comment="" />
+      <created>1606097598613</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606118937205</updated>
-      <workItem from="1606118941167" duration="1451000" />
-      <workItem from="1606267955695" duration="30397000" />
-      <workItem from="1606442072768" duration="79000" />
+      <updated>1606097598613</updated>
+      <workItem from="1606097599679" duration="3246000" />
+      <workItem from="1606106882706" duration="235000" />
+      <workItem from="1606107120250" duration="4414000" />
+      <workItem from="1606442153762" duration="807000" />
     </task>
-    <task id="LOCAL-00001" summary="Изменил заголовок чата">
-      <created>1606119336486</created>
+    <task id="LOCAL-00001" summary="Версия 2.1&#10;• Сервер теперь находится в github.com/explrms/907sv-js-chat-server&#10;• Добавлен MaterialUI&#10;• Переведены некоторые сообщения об ошибках и не только.">
+      <created>1606442412783</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1606119336486</updated>
+      <updated>1606442412783</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -98,28 +97,27 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменил заголовок чата" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил заголовок чата" />
+    <MESSAGE value="Версия 2.1&#10;• Сервер теперь находится в github.com/explrms/907sv-js-chat-server&#10;• Добавлен MaterialUI&#10;• Переведены некоторые сообщения об ошибках и не только." />
+    <option name="LAST_COMMIT_MESSAGE" value="Версия 2.1&#10;• Сервер теперь находится в github.com/explrms/907sv-js-chat-server&#10;• Добавлен MaterialUI&#10;• Переведены некоторые сообщения об ошибках и не только." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="307" key="FileChooserDialogImpl" timestamp="1606442151226">
+    <state x="552" y="210" key="#Deployment" timestamp="1606100434162">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="740" y="307" key="FileChooserDialogImpl/0.24.1920.1056@0.24.1920.1056" timestamp="1606442151226" />
-    <state x="461" y="197" key="SettingsEditor" timestamp="1606119070843">
+    <state x="552" y="210" key="#Deployment/0.24.1920.1056@0.24.1920.1056" timestamp="1606100434162" />
+    <state x="740" y="307" key="FileChooserDialogImpl" timestamp="1606442965492">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="461" y="197" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1606119070843" />
-    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1606119884195">
+    <state x="740" y="307" key="FileChooserDialogImpl/0.24.1920.1056@0.24.1920.1056" timestamp="1606442965492" />
+    <state x="461" y="197" key="SettingsEditor" timestamp="1606442444698">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1606119884195" />
-    <state x="769" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606119042780">
+    <state x="461" y="197" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1606442444698" />
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2" timestamp="1606442431460">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="769" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.24.1920.1056@0.24.1920.1056" timestamp="1606119042780" />
+    <state x="552" y="285" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1606442431460" />
   </component>
 </project>

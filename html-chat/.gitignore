@@ -1,7 +1,0 @@
-.idea
-node_modules
-build/
-storybook-static/
-.loki/
-chromedriver.log
-tests_output/
