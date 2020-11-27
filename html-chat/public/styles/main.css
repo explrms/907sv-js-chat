@@ -1,10 +1,37 @@
-h1 {
-    color: #a2a2a2;
+root {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-image: url("https://wallpaperset.com/w/full/4/0/7/154044.jpg");
+}
+.header {
+    color: #1c54b2;
+    font-family: Roboto, sans-serif;
 }
 
 .info {
     background-color: #ad0000;
 }
+.loginArea {
+    text-align: center;
+    margin-top: 15%;
+}
+.loginFields {
+    margin-top: 10px;
+}
+.buttonLogin {
+    margin-top: 50px;
+}
+.reglogButtons {
+
+}
+.bigIcon {
+    margin-top: 10px;
+}
+.defaultText {
+    font-family: Roboto, sans-serif;
+}
+
 
 #additionalInfo {
     background-color: #0000ad;

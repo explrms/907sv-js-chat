@@ -1,6 +1,13 @@
 import React from 'react';
 import { Formik } from 'formik';
 import apiService from '../apiService';
+import {Button, TextField} from "@material-ui/core";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from '@material-ui/icons/Add';
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import SweetAlert from 'sweetalert-react';
+import 'sweetalert/dist/sweetalert.css';
+
 
 export default class RegistrationView extends React.Component {
     constructor(props) {
@@ -16,7 +23,7 @@ export default class RegistrationView extends React.Component {
             .create(values)
             .then(() => {
                 this.setState({ result: 'Пользователь успешно зарегистрирован' });
-                setTimeout(() => this.props.history.push('/login'), 2000);
+                setTimeout(() => this.props.history.push('/login'), 1000);
             })
             .catch(error => this.setState({ error: 'Ошибка: ' + error.response.data.error }));
     }
@@ -25,14 +32,29 @@ export default class RegistrationView extends React.Component {
         const { error, result } = this.state;
 
         return (
-            <div className="registration-view">
-                <h1>Регистрация</h1>
+            <div className="registration-view loginArea">
+                <div className="reglogButtons">
+                    <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
+                        <Button href={"/login"}>Авторизация</Button>
+                        <Button href={"/registration"}>Регистрация</Button>
+                    </ButtonGroup>
+                </div>
+                <h1 className="header">Регистрация</h1>
                 {error && (
-                    <div className="error">
-                        <span style={{ color: 'red' }}>{error}</span>
-                    </div>
+                    <SweetAlert
+                        show={this.state.show}
+                        title="Внимание"
+                        text={error}
+                        onConfirm={() => this.setState({ show: false })}
+                    />
                 )}
-                {result && <div className="result">{result}</div>}
+                {result &&
+                <SweetAlert
+                    show={this.state.show}
+                    title="Внимание"
+                    text={result}
+                    onConfirm={() => this.setState({ show: false })}
+                />}
                 <Formik
                     initialValues={{ nickname: '', password: '' }}
                     validate={values => {
@@ -55,36 +77,54 @@ export default class RegistrationView extends React.Component {
                     {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                         <form onSubmit={handleSubmit}>
                             {errors.nickname && touched.nickname && (
-                                <div style={{ color: 'red' }}>{errors.nickname}</div>
-                            )}
-                            <div>
-                                <label>
-                                    Никнейм:&nbsp;
-                                    <input
-                                        type="text"
+                                <SweetAlert
+                                    show={this.state.show}
+                                    title="Внимание"
+                                    text={errors.nickname}
+                                    onConfirm={() => this.setState({ show: false })}
+                                />                            )}
+                                <div className="loginFields">
+                                    <TextField
+                                        id="nickname"
                                         name="nickname"
+                                        label="Логин"
+                                        defaultValue=""
+                                        helperText=""
                                         value={values.nickname}
                                         onChange={handleChange}
+                                        variant="outlined"
                                         onBlur={handleBlur}
                                     />
-                                </label>
-                            </div>
-                            {errors.password && touched.password && (
-                                <div style={{ color: 'red' }}>{errors.password}</div>
-                            )}
+                                </div>
+
                             <div>
-                                <label>
-                                    Пароль:&nbsp;
-                                    <input
-                                        type="password"
+                                <div className="loginFields">
+                                    <TextField
+                                        id="password"
                                         name="password"
-                                        value={values.password}
-                                        onChange={handleChange}
+                                        label="Пароль"
+                                        type="password"
                                         onBlur={handleBlur}
+                                        value={values.password}
+                                        autoComplete="current-password"
+                                        onChange={handleChange}
+                                        variant="outlined"
                                     />
-                                </label>
+                                        {errors.password && touched.password && (
+                                                <SweetAlert
+                                                    show={this.state.show}
+                                                    title="Внимание"
+                                                    text={errors.password}
+                                                    onConfirm={() => this.setState({ show: false })}
+                                                />
+                                        )}
+                                </div>
                             </div>
-                            <button type="submit">Создать пользователя</button>
+                            <div className="loginFields">
+                                <Fab color="primary" aria-label="add" type="submit" onClick={() => this.setState({ show: true })}>
+                                    <AddIcon />
+                                </Fab>
+                            </div>
                         </form>
                     )}
                 </Formik>

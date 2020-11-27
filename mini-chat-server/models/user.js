@@ -63,7 +63,7 @@ class User extends AbstractObject {
     const {nickname} = params;
 
     if (User.getByNickname(nickname)) {
-      throw new BadRequestError('User with this nickname already exists');
+      throw new BadRequestError('Пользователь с таким никнеймом уже существует');
     }
 
     const user = new User(params);
@@ -82,7 +82,7 @@ class User extends AbstractObject {
   static login ({nickname, password}) {
     const user = User.getByNickname(nickname);
     if (!user) {
-      throw new NotFoundError('User not found');
+      throw new NotFoundError('Пользователь не найден');
     }
 
     if (user.checkPassword(password)) {
@@ -101,7 +101,7 @@ class User extends AbstractObject {
       }).write();
       return token;
     } else {
-      throw new AuthError('Wrong password');
+      throw new AuthError('Кажется вы ввели неверный пароль');
     }
   }
 

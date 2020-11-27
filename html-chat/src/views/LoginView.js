@@ -1,5 +1,15 @@
 import React from 'react';
+import { Button }  from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import { InputLabel } from "@material-ui/core";
 import apiService from '../apiService';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Fab from '@material-ui/core/Fab';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import SweetAlert from "sweetalert-react";
+import Paper from '@material-ui/core/Paper';
+
+
 
 export default class LoginView extends React.Component {
     constructor(props) {
@@ -23,10 +33,11 @@ export default class LoginView extends React.Component {
                 password: this.state.password
             })
             .then(() => {
-                this.setState({ result: 'Пользователь успешно залогинился' });
+                this.setState({ result: 'Вы успешно вошли в аккаунт.' });
                 setTimeout(() => this.redirectAfterLogin(), 2000);
+                setTimeout(() => this.props.history.push('/profile'), 1000);
             })
-            .catch(error => this.setState({ error: 'Ошибка' + error.response.data.error }));
+            .catch(error => this.setState({ error: 'Ошибка:' + error.response.data.error }));
         e.preventDefault();
     }
 
@@ -42,34 +53,56 @@ export default class LoginView extends React.Component {
 
         return (
             <div className="login-view">
-                <h1>Логин</h1>
+                <div className="loginArea">
+                    <div className="reglogButtons">
+                        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
+                            <Button href={"/login"}>Авторизация</Button>
+                            <Button href={"/registration"}>Регистрация</Button>
+                        </ButtonGroup>
+                    </div>
+                <h1 className="header">Авторизация</h1>
                 {error}
-                {result && <div className="result">{result}</div>}
+
+                {result &&
+                <SweetAlert
+                    show={this.state.show}
+                    title="Внимание"
+                    text={result}
+                    onConfirm={() => this.setState({ show: false })}
+                />
+                }
                 <form onSubmit={e => this.handleSubmit(e)}>
-                    <div>
-                        <label>
-                            Никнейм:&nbsp;
-                            <input
-                                type="text"
+                    <div className="loginFields">
+                            <TextField
+                                id="nickname"
                                 name="nickname"
+                                label="Логин"
+                                defaultValue=""
+                                helperText=""
                                 value={this.state.nickname}
                                 onChange={e => this.setState({ nickname: e.target.value })}
+                                variant="outlined"
                             />
-                        </label>
                     </div>
-                    <div>
-                        <label>
-                            Пароль:&nbsp;
-                            <input
-                                type="password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={e => this.setState({ password: e.target.value })}
-                            />
-                        </label>
+                    <div className="loginFields">
+                        <TextField
+                            id="password"
+                            name="password"
+                            label="Пароль"
+                            type="password"
+                            value={this.state.password}
+                            autoComplete="current-password"
+                            onChange={e => this.setState({ password: e.target.value })}
+                            variant="outlined"
+                        />
                     </div>
-                    <button type="submit">Войти</button>
+                    <div className="loginFields">
+                        <Fab color="primary" aria-label="add" type="submit" onClick={() => this.setState({ show: true })}>
+                            <ArrowForwardIcon />
+                        </Fab>
+                    </div>
                 </form>
+                </div>
             </div>
         );
     }
