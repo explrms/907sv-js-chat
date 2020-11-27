@@ -5,6 +5,8 @@ import RegistrationView from './views/RegistrationView';
 import ChatView from './views/ChatView';
 import ProfileView from './views/ProfileView';
 import apiService from './apiService';
+import Button from '@material-ui/core/Button';
+
 
 class PrivateRoute extends React.Component {
     render() {
@@ -68,13 +70,14 @@ class App extends React.Component {
             <>
                 {user ? (
                     <>
-                        <Link to="/profile">Профиль {user.nickname}</Link>&nbsp;
-                        <button onClick={() => this.logoutHandler()}>Выйти</button>
+                        <Button variant="contained" color="primary" href="/profile">
+                            Профиль {user.nickname}
+                        </Button>
+                        <Button onClick={() => this.logoutHandler()}>Выйти</Button>
                     </>
                 ) : (
                     <>
-                        <Link to="/login">Логин</Link>&nbsp;
-                        <Link to="/registration">Регистрация</Link>&nbsp;
+
                     </>
                 )}
                 <Switch>
